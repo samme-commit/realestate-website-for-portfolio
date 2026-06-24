@@ -57,13 +57,6 @@ Projektet är byggt med React, TypeScript, Vite och komponenter från ReactBits,
 ## Bilder
 
 
-
-Lägg till screenshots här när du har tagit bilder på sidan.
-
-
-
-```md
-
 ![Hero section](./screenshots/hero.png)
 
 
@@ -73,8 +66,6 @@ Lägg till screenshots här när du har tagit bilder på sidan.
 
 
 ![Agents section](./screenshots/agents.png)
-
-```
 
 
 
