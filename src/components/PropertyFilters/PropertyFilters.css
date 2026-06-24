@@ -1,0 +1,76 @@
+.property-filters {
+  display: grid;
+  grid-template-columns: 1.6fr repeat(3, 1fr) auto;
+  gap: 0.8rem;
+  margin: 2rem 0;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  background: rgba(255, 250, 244, 0.82);
+  border: 1px solid rgba(24, 21, 18, 0.08);
+  box-shadow: 0 24px 70px rgba(24, 21, 18, 0.08);
+}
+
+.filter-field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.filter-field label {
+  color: #8a6a43;
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.filter-field input,
+.filter-field select {
+  min-height: 3rem;
+  width: 100%;
+  border: 1px solid rgba(24, 21, 18, 0.1);
+  border-radius: 999px;
+  background: #fffaf4;
+  padding: 0 1rem;
+  color: #181512;
+  outline: none;
+}
+
+.filter-field input:focus,
+.filter-field select:focus {
+  border-color: rgba(138, 106, 67, 0.45);
+  box-shadow: 0 0 0 4px rgba(138, 106, 67, 0.12);
+}
+
+.filter-reset {
+  align-self: end;
+  min-height: 3rem;
+  border: 0;
+  border-radius: 999px;
+  background: #181512;
+  padding: 0 1rem;
+  color: #fffaf4;
+  font-weight: 850;
+  cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+  .property-filters {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .filter-field-wide,
+  .filter-reset {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 620px) {
+  .property-filters {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-field-wide,
+  .filter-reset {
+    grid-column: auto;
+  }
+}

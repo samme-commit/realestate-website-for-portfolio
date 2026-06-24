@@ -1,0 +1,57 @@
+.border-glow {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  --border-glow-x: 50%;
+  --border-glow-y: 50%;
+  --border-glow-color: rgba(138, 106, 67, 0.25);
+}
+
+.border-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  padding: 1px;
+  background:
+    radial-gradient(
+      360px circle at var(--border-glow-x) var(--border-glow-y),
+      var(--border-glow-color),
+      transparent 42%
+    );
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+
+.border-glow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  border-radius: inherit;
+  background:
+    radial-gradient(
+      520px circle at var(--border-glow-x) var(--border-glow-y),
+      rgba(138, 106, 67, 0.08),
+      transparent 45%
+    );
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.border-glow:hover::before,
+.border-glow:hover::after {
+  opacity: 1;
+}
